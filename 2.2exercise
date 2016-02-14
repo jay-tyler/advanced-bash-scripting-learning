@@ -1,0 +1,18 @@
+#!/bin/bash
+
+LOGFILE="/var/log/foologfile"
+
+if [ -n "$1" ]
+then
+  logfile=$1
+else
+  logfile=$LOGFILE
+fi
+
+for var in date who uptime 
+do
+  echo "$("$var")" >> $logfile
+  echo "$("$var")"
+done
+
+exit 0
